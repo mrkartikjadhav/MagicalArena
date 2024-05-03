@@ -27,5 +27,7 @@ public class MagicalArena {
             attacker = defender;
             defender = temp;
         }
+        String winner = PlayerA.isAlive() ? "Player A" : "Player B";
+        System.out.println("The winner is " + winner+"!");
     }
 }
