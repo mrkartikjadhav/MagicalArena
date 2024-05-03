@@ -8,6 +8,24 @@ public class MagicalArena {
     }
 
     public void fight() {
-        
+        Player attacker = PlayerA.getHealth() < PlayerB.getHealth() ? PlayerA : PlayerB;
+        Player defender = attacker == PlayerA ? PlayerB : PlayerA;
+
+        while (attacker.isAlive() && defender.isAlive()) {
+            int attackRoll = attacker.rollDie();
+            int defendRoll = defender.rollDie();
+
+            int attackDamage = attacker.calculateAttackDamage(attackRoll);
+
+            int defendDamage = defender.calculateDefendDamage(defendRoll);
+
+            int damageDealt = Math.max(0, attackDamage - defendDamage);
+
+            defender.reduceHealth(damageDealt);
+
+            Player temp = attacker;
+            attacker = defender;
+            defender = temp;
+        }
     }
 }
