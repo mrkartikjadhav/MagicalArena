@@ -20,4 +20,13 @@ public class Player{
     public int getAttack(){    
         return attack;
     }
+
+    public void reduceHealth(int damage){
+        health -= damage;
+        if (health < 0){
+            health = 0;
+        }
+    }
+
+    
 }
