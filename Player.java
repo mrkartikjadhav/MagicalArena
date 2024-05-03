@@ -35,5 +35,10 @@ public class Player{
     public int rollDie() {
         return (int)(Math.random() * 6) + 1; //6-sided die roll
     }
+
+    public int calculateAttackDamage(int dieroll){
+        return attack * dieroll;
+    }
+
     
 }
