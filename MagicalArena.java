@@ -6,5 +6,8 @@ public class MagicalArena {
         this.PlayerA = PlayerA;
         this.PlayerB = PlayerB;
     }
-    
+
+    public void fight() {
+        
+    }
 }
