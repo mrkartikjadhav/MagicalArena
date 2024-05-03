@@ -40,5 +40,7 @@ public class Player{
         return attack * dieroll;
     }
 
-    
+    public int calculateDefendDamage(int dieroll){
+        return strength * dieroll;
+    }
 }
